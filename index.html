@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Greek Boys | Authentic Greek Restaurant - Ajman Corniche</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        greek: {
+                            blue: '#0A3B5C',
+                            darkBlue: '#051E30',
+                            sky: '#2B82C9',
+                            gold: '#D4AF37',
+                            sand: '#F7F4EE',
+                            cardBg: '#0F2C44',
+                            accent: '#164E75'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #051E30;
+            color: #F7F4EE;
+        }
+        .font-serif-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-panel {
+            background: rgba(15, 44, 68, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(43, 130, 201, 0.2);
+        }
+        .glass-nav {
+            background: rgba(5, 30, 48, 0.88);
+            backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #051E30;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2B82C9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-greek-darkBlue text-greek-sand antialiased selection:bg-greek-sky selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-greek-sky/25 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-greek-sky flex items-center justify-center font-serif-heading text-xl font-bold text-greek-darkBlue shadow-lg shadow-greek-sky/30">
+                    GB
+                </div>
+                <div>
+                    <span class="text-xl font-serif-heading font-bold tracking-wider text-white block leading-none">THE GREEK BOYS</span>
+                    <span class="text-[9px] tracking-[0.25em] text-greek-gold uppercase font-semibold mt-1 block">Restaurant • Ajman Corniche</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-greek-sand/90">
+                <a href="#about" class="hover:text-greek-gold transition-colors">Our Story</a>
+                <a href="#menu" class="hover:text-greek-gold transition-colors">Greek Menu</a>
+                <a href="#specials" class="hover:text-greek-gold transition-colors">Signatures</a>
+                <a href="#why-us" class="hover:text-greek-gold transition-colors">Why Us</a>
+                <a href="#reviews" class="hover:text-greek-gold transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-greek-gold transition-colors">Location</a>
+            </nav>
+
+            <div class="hidden md:flex items-center">
+                <a href="#contact" class="px-6 py-3 rounded-full bg-greek-sky hover:bg-greek-blue text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-greek-sky/30">
+                    Order / Reserve
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-greek-sky focus:outline-none">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-b border-greek-sky/30 px-6 py-8 space-y-5">
+            <a href="#about" class="block text-sm tracking-widest uppercase text-white">Our Story</a>
+            <a href="#menu" class="block text-sm tracking-widest uppercase text-white">Greek Menu</a>
+            <a href="#specials" class="block text-sm tracking-widest uppercase text-white">Signatures</a>
+            <a href="#why-us" class="block text-sm tracking-widest uppercase text-white">Why Us</a>
+            <a href="#reviews" class="block text-sm tracking-widest uppercase text-white">Reviews</a>
+            <a href="#contact" class="block text-sm tracking-widest uppercase text-white">Location</a>
+            <a href="#contact" class="block text-center w-full py-3 rounded-full bg-greek-sky text-white font-bold text-xs uppercase tracking-wider">Order / Reserve</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+        <!-- Background Ambient Glows -->
+        <div class="absolute top-1/4 left-[-5%] w-96 h-96 bg-greek-sky/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-[-5%] w-96 h-96 bg-greek-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full z-10">
+            <!-- Text Content -->
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-greek-cardBg border border-greek-sky/30 text-greek-gold text-xs font-medium tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-greek-sky animate-pulse"></span>
+                    Ajman Corniche • Authentic Greek Grills & Gyros
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-serif-heading font-normal text-white leading-[1.05] tracking-tight">
+                    Taste the Authentic Flavors of <span class="text-transparent bg-clip-text bg-gradient-to-r from-greek-sky via-greek-gold to-greek-sky italic">Greece</span> in Ajman.
+                </h1>
+
+                <p class="text-base md:text-lg text-greek-sand/80 max-w-xl font-light leading-relaxed">
+                    Welcome to The Greek Boys. From juicy lamb and chicken gyros wrapped in warm pita bread to loaded TGB feta chips and traditional souvlakia right on the Ajman Corniche.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-5 pt-2">
+                    <a href="#menu" class="px-8 py-4 rounded-full bg-greek-sky hover:bg-greek-blue text-white font-bold text-xs uppercase tracking-widest transition-all shadow-xl shadow-greek-sky/30 flex items-center gap-3">
+                        <span>Explore Menu</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-full glass-panel hover:bg-greek-cardBg text-white font-semibold text-xs uppercase tracking-widest transition-all border border-greek-sky/30">
+                        Get Directions
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="pt-10 border-t border-greek-sky/20 grid grid-cols-3 gap-6 max-w-md">
+                    <div>
+                        <span class="block font-serif-heading text-3xl text-white">4.8★</span>
+                        <span class="text-[11px] text-greek-gold uppercase tracking-wider mt-1 block">Google Rating</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif-heading text-3xl text-white">100%</span>
+                        <span class="text-[11px] text-greek-gold uppercase tracking-wider mt-1 block">Authentic Recipes</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif-heading text-3xl text-white">Corniche</span>
+                        <span class="text-[11px] text-greek-gold uppercase tracking-wider mt-1 block">Faizan Tower, Ajman</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Card Showcase -->
+            <div class="lg:col-span-5 relative flex items-center justify-center">
+                <div class="relative w-full space-y-4">
+                    <div class="glass-panel p-4 rounded-3xl overflow-hidden border border-greek-sky/30 shadow-2xl relative group">
+                        <div class="h-64 rounded-2xl bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=800');"></div>
+                        <div class="pt-4 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-serif-heading text-lg font-bold text-white">Classic Greek Gyro Platter</h4>
+                                <p class="text-xs text-greek-sky">Served with warm pita, tzatziki & chips</p>
+                            </div>
+                            <span class="text-greek-gold font-bold text-lg">AED 58</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT / STORY -->
+    <section id="about" class="py-28 relative bg-greek-cardBg/40 border-y border-greek-sky/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden glass-panel p-3 border border-greek-sky/30">
+                        <div class="h-[480px] rounded-2xl bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&q=80&w=800');"></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-7">
+                    <span class="text-greek-gold text-xs font-bold uppercase tracking-[0.25em]">Mediterranean Tradition</span>
+                    <h2 class="text-4xl md:text-5xl font-serif-heading text-white leading-tight">
+                        A True Taste of Greece on the Ajman Corniche.
+                    </h2>
+                    <p class="text-greek-sand/80 leading-relaxed text-base font-light">
+                        At <strong class="text-white">The Greek Boys</strong>, we bring the vibrant street food culture and comforting flavors of Greece right to the UAE. Located conveniently at Faizan Tower on the Ajman Corniche, every dish is prepared with fresh ingredients, genuine feta cheese, aromatic Greek oregano, and homemade tzatziki sauces.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="glass-panel p-6 rounded-2xl border border-greek-sky/20 space-y-2">
+                            <i class="fa-solid fa-fire-burner text-greek-sky text-2xl"></i>
+                            <h4 class="font-serif-heading text-xl text-white">Traditional Grills</h4>
+                            <p class="text-xs text-greek-sand/70 leading-relaxed">Marinated chicken skewers, beef souvlakia, and slow-roasted gyros.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl border border-greek-sky/20 space-y-2">
+                            <i class="fa-solid fa-bowl-food text-greek-sky text-2xl"></i>
+                            <h4 class="font-serif-heading text-xl text-white">Fresh Greek Salads & Dips</h4>
+                            <p class="text-xs text-greek-sand/70 leading-relaxed">Classic horiatiki salad, tzatziki, taramasalata, and warm pita bread.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MENU HIGHLIGHTS -->
+    <section id="menu" class="py-28 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                <span class="text-greek-gold text-xs font-bold uppercase tracking-[0.25em]">Our Specialties</span>
+                <h2 class="text-4xl md:text-6xl font-serif-heading text-white">Popular Greek Menu</h2>
+                <p class="text-greek-sand/70 text-sm font-light">Explore our customer favorites prepared fresh every single day.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="glass-panel rounded-3xl p-8 border border-greek-sky/20 hover:border-greek-sky/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] text-greek-sky font-bold uppercase tracking-widest bg-greek-cardBg px-3 py-1 rounded-full border border-greek-sky/30">Sandwich</span>
+                            <span class="text-greek-gold font-bold text-lg">AED 44</span>
+                        </div>
+                        <h3 class="text-2xl font-serif-heading text-white mb-2">Classic Gyro Sandwich</h3>
+                        <p class="text-xs text-greek-sand/70 leading-relaxed">Wrapped in warm pita with tomato, onion, lettuce, chips and homemade tzatziki sauce (Lamb or Chicken).</p>
+                    </div>
+                    <div class="pt-6 border-t border-greek-sky/20 mt-6 flex justify-between items-center text-xs text-greek-sky">
+                        <span>Best Seller</span>
+                        <span><i class="fa-solid fa-star text-greek-gold"></i> 4.9</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glass-panel rounded-3xl p-8 border border-greek-sky/20 hover:border-greek-sky/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] text-greek-sky font-bold uppercase tracking-widest bg-greek-cardBg px-3 py-1 rounded-full border border-greek-sky/30">Loaded Chips</span>
+                            <span class="text-greek-gold font-bold text-lg">AED 44</span>
+                        </div>
+                        <h3 class="text-2xl font-serif-heading text-white mb-2">Loaded TGB Chips</h3>
+                        <p class="text-xs text-greek-sand/70 leading-relaxed">Thick sliced crunchy chips seasoned with oregano, feta cheese, gyro meat, tomato and onions for sharing.</p>
+                    </div>
+                    <div class="pt-6 border-t border-greek-sky/20 mt-6 flex justify-between items-center text-xs text-greek-sky">
+                        <span>Must Try</span>
+                        <span><i class="fa-solid fa-star text-greek-gold"></i> 4.8</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glass-panel rounded-3xl p-8 border border-greek-sky/20 hover:border-greek-sky/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] text-greek-sky font-bold uppercase tracking-widest bg-greek-cardBg px-3 py-1 rounded-full border border-greek-sky/30">Grills</span>
+                            <span class="text-greek-gold font-bold text-lg">AED 54</span>
+                        </div>
+                        <h3 class="text-2xl font-serif-heading text-white mb-2">The Greek Boys Souvlakia</h3>
+                        <p class="text-xs text-greek-sand/70 leading-relaxed">2 marinated skewers with traditional Greek seasoning mix, grilled onions, pepper, salad, pita and tzatziki.</p>
+                    </div>
+                    <div class="pt-6 border-t border-greek-sky/20 mt-6 flex justify-between items-center text-xs text-greek-sky">
+                        <span>Chef Special</span>
+                        <span><i class="fa-solid fa-star text-greek-gold"></i> 4.9</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SIGNATURE SPECIALS -->
+    <section id="specials" class="py-28 bg-greek-cardBg/40 border-y border-greek-sky/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-8">
+                    <span class="text-greek-gold text-xs font-bold uppercase tracking-[0.25em]">Sharing Feast</span>
+                    <h2 class="text-4xl md:text-5xl font-serif-heading text-white leading-tight">
+                        Meal For 2 & Platters
+                    </h2>
+                    <p class="text-greek-sand/80 text-sm font-light leading-relaxed">
+                        Gather with friends and family over our hearty Greek sharing platters featuring grilled halloumi cheese, classic gyros, large Greek salads, and crispy golden chips.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-circle-check text-greek-sky"></i>
+                            <span class="text-xs text-white uppercase tracking-wider">Grilled Halloumi Cheese with Warm Pita</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-circle-check text-greek-sky"></i>
+                            <span class="text-xs text-white uppercase tracking-wider">Slow-Cooked Gyro Platters</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-circle-check text-greek-sky"></i>
+                            <span class="text-xs text-white uppercase tracking-wider">Authentic Greek Macaroni (Makaronia Me Kima)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="glass-panel p-8 rounded-3xl border border-greek-sky/30 space-y-6">
+                        <h3 class="text-3xl font-serif-heading text-white">Order For Dine-in or Delivery</h3>
+                        <p class="text-xs text-greek-sand/70 leading-relaxed">Available on Ajman Corniche for dine-in, takeaway, and delivery across Ajman via Talabat.</p>
+                        <a href="#contact" class="inline-block px-8 py-4 rounded-full bg-greek-sky text-white font-bold text-xs uppercase tracking-widest hover:bg-greek-blue transition-all">Contact Restaurant</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: REVIEWS -->
+    <section id="reviews" class="py-28 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-greek-gold text-xs font-bold uppercase tracking-[0.25em]">Customer Love</span>
+                <h2 class="text-4xl md:text-5xl font-serif-heading text-white">What Our Guests Say</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-3xl border border-greek-sky/20 space-y-4">
+                    <div class="flex text-amber-400 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-xs italic text-greek-sand/80">"Amazing authentic Greek food right on the Ajman Corniche! The loaded TGB chips with gyro meat and feta are out of this world."</p>
+                    <h5 class="text-sm font-bold text-white pt-2">Karim M.</h5>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-greek-sky/20 space-y-4">
+                    <div class="flex text-amber-400 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-xs italic text-greek-sand/80">"Best gyros and souvlakia in Ajman. Fresh ingredients, generous portions, and the tzatziki tastes just like in Athens."</p>
+                    <h5 class="text-sm font-bold text-white pt-2">Nour H.</h5>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-greek-sky/20 space-y-4">
+                    <div class="flex text-amber-400 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-xs italic text-greek-sand/80">"Cozy atmosphere, very friendly staff, and quick service. Highly recommend the Greek salad and chicken souvlakia."</p>
+                    <h5 class="text-sm font-bold text-white pt-2">Ziad Al-Nuaimi</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: LOCATION & CONTACT -->
+    <section id="contact" class="py-28 bg-greek-cardBg/40 border-t border-greek-sky/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-greek-gold text-xs font-bold uppercase tracking-[0.25em]">Find Us</span>
+                        <h2 class="text-4xl font-serif-heading text-white mt-2">Location & Hours</h2>
+                        <p class="text-xs text-greek-sand/70 mt-2">Ground Floor, Faizan Tower, Ajman Corniche, Ajman, UAE</p>
+                    </div>
+
+                    <div class="space-y-4 text-xs">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-greek-cardBg flex items-center justify-center text-greek-sky shrink-0 border border-greek-sky/30"><i class="fa-solid fa-phone"></i></div>
+                            <div><strong class="text-white block">Phone / Orders</strong>+971 58 675 9991</div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-greek-cardBg flex items-center justify-center text-greek-sky shrink-0 border border-greek-sky/30"><i class="fa-solid fa-clock"></i></div>
+                            <div><strong class="text-white block">Opening Hours</strong>Tue – Sun: 02:00 PM – 11:00 PM (Mon Closed)</div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=The+Greek+Boys+Ajman+Corniche" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-greek-sky text-white font-bold text-xs uppercase tracking-wider shadow-lg">
+                        <i class="fa-solid fa-map-location-dot"></i> Open Google Maps
+                    </a>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form class="glass-panel p-8 rounded-3xl border border-greek-sky/30 space-y-6" onsubmit="event.preventDefault(); alert('Thank you! The Greek Boys team has received your message/reservation request.');">
+                        <h3 class="text-2xl font-serif-heading text-white">Table Reservation or Inquiry</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Full Name" required class="px-4 py-3 rounded-xl bg-greek-darkBlue border border-greek-sky/30 text-xs text-white focus:outline-none focus:border-greek-sky">
+                            <input type="tel" placeholder="Phone Number" required class="px-4 py-3 rounded-xl bg-greek-darkBlue border border-greek-sky/30 text-xs text-white focus:outline-none focus:border-greek-sky">
+                        </div>
+                        <select class="w-full px-4 py-3 rounded-xl bg-greek-darkBlue border border-greek-sky/30 text-xs text-greek-sand focus:outline-none focus:border-greek-sky">
+                            <option>Dine-in Table Booking</option>
+                            <option>Takeaway Order Inquiry</option>
+                            <option>Catering & Events</option>
+                        </select>
+                        <textarea rows="3" placeholder="Additional notes or requests..." class="w-full px-4 py-3 rounded-xl bg-greek-darkBlue border border-greek-sky/30 text-xs text-white focus:outline-none focus:border-greek-sky"></textarea>
+                        <button type="submit" class="w-full py-4 rounded-full bg-greek-sky hover:bg-greek-blue text-white font-bold text-xs uppercase tracking-widest transition-all">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-greek-sky/20 text-center text-xs text-greek-gold/60">
+        <p>© 2026 The Greek Boys Restaurant - Ajman Corniche. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
